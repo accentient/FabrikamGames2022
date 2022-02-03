@@ -10,9 +10,9 @@ namespace TicTacToeLib
     {
         private Field[,] _fields;
 
-        public event EventHandler<GameStatus> GameEnd;
+        public event EventHandler<GameStatus>? GameEnd;
 
-        public Board(Field[,] fields)
+        public Board(Field[,] ?fields)
         {
             if (fields == null)
             {
@@ -59,7 +59,7 @@ namespace TicTacToeLib
             }
         }
 
-        private void Board_FieldStatusChanged(object sender, EventArgs e)
+        private void Board_FieldStatusChanged(object ?sender, EventArgs ?e)
         {
             CheckWinCondition();
         }
@@ -113,7 +113,7 @@ namespace TicTacToeLib
         // [X] [ ] [ ]      [ ] [X] [ ]     [ ] [ ] [X]
         // [X] [ ] [ ]      [ ] [X] [ ]     [ ] [ ] [X]
         //
-        private GameStatus AllFieldsInRowWinCondition(GameStatus currentStatus = null)
+        private GameStatus AllFieldsInRowWinCondition(GameStatus currentStatus)
         {
             if (currentStatus == null)
             {
@@ -156,7 +156,7 @@ namespace TicTacToeLib
         // [ ] [ ] [ ]      [X] [X] [X]     [ ] [ ] [ ]
         // [ ] [ ] [ ]      [ ] [ ] [ ]     [X] [X] [X]
         //
-        private GameStatus AllFieldsInColumnWinCondition(GameStatus currentStatus = null)
+        private GameStatus AllFieldsInColumnWinCondition(GameStatus currentStatus)
         {
             if (currentStatus == null)
             {
@@ -198,7 +198,7 @@ namespace TicTacToeLib
         // [ ] [X] [ ]
         // [ ] [ ] [X]
         //
-        private GameStatus AllFieldsInMainDiagonalWinCondition(GameStatus currentStatus = null)
+        private GameStatus AllFieldsInMainDiagonalWinCondition(GameStatus currentStatus)
         {
             if (currentStatus == null)
             {
@@ -232,7 +232,7 @@ namespace TicTacToeLib
         // [ ] [X] [ ]
         // [X] [ ] [ ]
         //
-        private GameStatus AllFieldsInOppositeDiagonalWinCondition(GameStatus currentStatus = null)
+        private GameStatus AllFieldsInOppositeDiagonalWinCondition(GameStatus currentStatus)
         {
             if (currentStatus == null)
             {
@@ -256,7 +256,7 @@ namespace TicTacToeLib
         }
 
         // Handles any case where ALL fields have value - TIE
-        private GameStatus AllFieldsOcupiedWinCondition(GameStatus currentStatus = null)
+        private GameStatus AllFieldsOcupiedWinCondition(GameStatus currentStatus)
         {
             if (currentStatus == null)
             {

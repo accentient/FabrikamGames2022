@@ -16,8 +16,7 @@ namespace TicTacToeLib
     public class Field
     {
         private FIELD_STATUS _fieldStatus;
-
-        public event EventHandler FieldStatusChanged;
+        public event EventHandler? FieldStatusChanged;
 
         public Field()
         {
@@ -36,16 +35,16 @@ namespace TicTacToeLib
                 if (value != _fieldStatus)
                 {
                     _fieldStatus = value;
-                    OnFieldStatusChanged();
+                    OnFieldStatusChanged(new EventArgs());
                 }
             }
         }
 
-        private void OnFieldStatusChanged()
+        private void OnFieldStatusChanged(EventArgs e)
         {
             if (FieldStatusChanged != null)
             {
-                FieldStatusChanged(this, null);
+                FieldStatusChanged(this,e);
             }
         }
     }

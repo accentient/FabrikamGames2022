@@ -11,7 +11,7 @@ namespace TicTacToeLibTests
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestConstructorFieldNull()
         {
-            Board board = new Board(null);
+             Board board = new Board(null);
         }
 
         [TestMethod]
@@ -40,7 +40,7 @@ namespace TicTacToeLibTests
             fields[0, 1] = new Field();
             fields[0, 2] = new Field();
             fields[1, 0] = new Field();
-            fields[1, 1] = null;
+            // fields[1, 1] = null;
             fields[1, 2] = new Field();
             fields[2, 0] = new Field();
             fields[2, 1] = new Field();
