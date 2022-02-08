@@ -10,7 +10,7 @@ namespace TicTacToeLib
     {
         private Field[,] _fields;
 
-        public event EventHandler<GameStatus>? GameEnd;
+        public event EventHandler<GameStatus> GameEnd = (s, args) => { };
 
         public Board(Field[,] ?fields)
         {
