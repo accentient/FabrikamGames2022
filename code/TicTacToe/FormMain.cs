@@ -24,7 +24,6 @@ namespace TicTacToe
 
     public FormMain()
     {
-      _board = new Board(null);
       InitializeComponent();
     }
 
