@@ -37,7 +37,7 @@ namespace TicTacToe
       StartGame();
     }
 
-    void _board_GameEnd(object sender, GameStatus e)
+    void _board_GameEnd(object? sender, GameStatus e)
     {
       DisableButtons();
 
