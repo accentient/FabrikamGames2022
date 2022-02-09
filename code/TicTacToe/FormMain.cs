@@ -24,6 +24,7 @@ namespace TicTacToe
 
     public FormMain()
     {
+      _board = new Board(new Field[0,0]);
       InitializeComponent();
     }
 
@@ -117,7 +118,7 @@ namespace TicTacToe
 
     private void InitBoard()
     {
-      if (_board == null)
+      if (_board == null || _board.Fields.Length == 0)
       {
         Field[,] fields = new Field[3, 3];
 
